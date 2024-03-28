@@ -67,6 +67,25 @@ void MainWindow::setupTableView()
     buttonsLayout->addWidget(ui->add);
     buttonsLayout->addWidget(ui->delet);
 
+    QLineEdit *searchLineEdit = new QLineEdit;
+    QPushButton *editButton = new QPushButton("Искать");
+    buttonsLayout->addWidget(searchLineEdit);
+    buttonsLayout->addWidget(editButton);
+
+    connect(editButton, &QPushButton::clicked, [=](){
+        QString searchText = searchLineEdit->text();
+        for(int row = 0; row < model->rowCount(); row++){
+            for(int col = 0; col < model->columnCount(); col++){
+                QModelIndex index = model->index(row, col);
+                QString cellText = index.data().toString();
+                if(cellText.contains(searchText, Qt::CaseInsensitive)){
+                    tableView->selectRow(row);
+                    return;
+                }
+            }
+        }
+    });
+
     buttonsWidget->setLayout(buttonsLayout);
 
     QVBoxLayout *layout = new QVBoxLayout;
@@ -83,7 +102,6 @@ void MainWindow::setupButtons()
 {
     connect(ui->add, &QPushButton::clicked, this, &MainWindow::on_add_clicked);
     connect(ui->delet, &QPushButton::clicked, this, &MainWindow::on_delet_clicked);
-    connect(ui->edit, &QPushButton::clicked, this, &MainWindow::on_edit_clicked);
 }
 
 void MainWindow::on_add_clicked()
