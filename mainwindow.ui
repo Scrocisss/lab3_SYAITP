@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>800</width>
+    <height>600</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QListView" name="listView">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>0</y>
+      <width>661</width>
+      <height>341</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="add">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>350</y>
+      <width>161</width>
+      <height>61</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Times New Roman</family>
+      <pointsize>24</pointsize>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton {
+    background-color: green;
+    border: none;
+}
+
+QPushButton:pressed {
+    background-color: transparent;
+}</string>
+    </property>
+    <property name="text">
+     <string>ДОБАВИТЬ</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="edit">
+    <property name="geometry">
+     <rect>
+      <x>220</x>
+      <y>340</y>
+      <width>231</width>
+      <height>71</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Times New Roman</family>
+      <pointsize>24</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string>РЕДАКТИРОВАТЬ</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="delet">
+    <property name="geometry">
+     <rect>
+      <x>500</x>
+      <y>350</y>
+      <width>161</width>
+      <height>61</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Times New Roman</family>
+      <pointsize>24</pointsize>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton {
+    background-color: red;
+    border: none;
+}
+
+QPushButton:pressed {
+    background-color: transparent;
+}</string>
+    </property>
+    <property name="text">
+     <string>УДАЛИТЬ</string>
+    </property>
+   </widget>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>800</width>
+     <height>24</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QMenuBar {
+    background-color: lightgray;
+}
+
+QMenu {
+    background-color: lightgray;
+}
+
+QAction {
+    color: black;
+}
+
+QAction:hover {
+    background-color: lightblue;
+}
+
+QAction:selected {
+    background-color: blue;
+    color: white;
+}
+</string>
+   </property>
+   <widget class="QMenu" name="menu">
+    <property name="title">
+     <string>Библиотека</string>
+    </property>
+    <addaction name="action"/>
+    <addaction name="action_2"/>
+    <addaction name="action_3"/>
+   </widget>
+   <addaction name="menu"/>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+  <action name="action">
+   <property name="icon">
+    <iconset resource="resources.qrc">
+     <normaloff>:/rec/img/export.png</normaloff>:/rec/img/export.png</iconset>
+   </property>
+   <property name="text">
+    <string>Экспорт</string>
+   </property>
+  </action>
+  <action name="action_2">
+   <property name="icon">
+    <iconset resource="resources.qrc">
+     <normaloff>:/rec/img/import.png</normaloff>:/rec/img/import.png</iconset>
+   </property>
+   <property name="text">
+    <string>Импорт</string>
+   </property>
+  </action>
+  <action name="action_3">
+   <property name="icon">
+    <iconset resource="resources.qrc">
+     <normaloff>:/rec/img/exit.jpeg</normaloff>:/rec/img/exit.jpeg</iconset>
+   </property>
+   <property name="text">
+    <string>Выход</string>
+   </property>
+  </action>
+ </widget>
+ <resources>
+  <include location="resources.qrc"/>
+ </resources>
+ <connections/>
+</ui>
